@@ -1,0 +1,142 @@
+#navContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+#outerContainer {
+  padding-inline: 100px;
+}
+
+#greenStrip {
+  background-color: #89c74a;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 9px;
+  padding-inline: 100px;
+}
+
+#title {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+#divider {
+  margin-left: 16px;
+  margin-right: 16px
+}
+
+#email {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#mobileNumber {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#contactsContainer {
+  display: flex;
+  align-items: center;
+}
+
+#menu {
+  display: flex;
+}
+
+.menuItem {
+  margin: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  color: #89c74a
+}
+
+#cartIcon:hover {
+  color: #89c74a
+}
+
+#searchBox {
+  width: 64%;
+  border: 1px solid #EDEDC9;
+  font-size: 17px;
+  height: 45px;
+  padding-inline: 25px;
+  color: #808088
+}
+
+#searchBtn {
+  height: 45px;
+  padding: 3px;
+  margin: 0px;
+  width: 5%;
+  background-color: #89c74a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background-color: orange;
+}
+
+#searchDropdown {
+  border: 1px solid #EDEDC9;
+  font-size: 17px;
+  width: 30%;
+  height: 45px;
+  padding-inline: 25px;
+  color: #808088;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+#inputBoxesContainer {
+  display: flex
+}
+
+
+@media only screen and (max-width: 800px) {
+  #menu {
+    display: none;
+  }
+}
+
+#socialIcons {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #greenStrip {
+    display: block;
+  }
+  #contactsContainer {
+    display: flex;
+    justify-content: center;
+  }
+  #searchDropdown {
+    display: none;
+  }
+  #searchBox {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #navContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

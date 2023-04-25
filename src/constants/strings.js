@@ -1,0 +1,8 @@
+export const COOKING_ASSISTANT = 'Cooking Assistant'
+export const EMAIL = 'info@gmail.com'
+export const MOBILE_NUMBER = '+970599102215'
+export const HOME = 'HOME'
+export const SHOP = 'Shop'
+export const ABOUT = 'ABOUT'
+export const CONTACT_US = 'CONTACT US'
+export const FAQ= 'Faq'
