@@ -1,0 +1,10 @@
+#container {
+    /* padding-inline: 32px; */
+}
+
+#productsContainer {
+    padding: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
