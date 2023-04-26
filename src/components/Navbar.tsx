@@ -18,7 +18,7 @@ const lemonada = Lemonada({
 })
 
 interface props {
-  hideSearchBar: boolean
+  hideSearchBar?: boolean
 }
 
 export default function Navbar({ hideSearchBar } : props) {
@@ -44,23 +44,23 @@ export default function Navbar({ hideSearchBar } : props) {
             <Image alt='' src={Logo} width={148} height={40} />
           </Link>
           <div id={styles.menu}>
-            <div className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href='./' className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
-            </div>
-            <div className={`${lemonada.className} ${styles.menuItem}`}>
+            </Link>
+            <Link href='./shop'className={`${lemonada.className} ${styles.menuItem}`}>
               {SHOP}
-            </div>
-            <div className={`${lemonada.className} ${styles.menuItem}`}>
+            </Link>
+            <Link href='./about' className={`${lemonada.className} ${styles.menuItem}`}>
               {ABOUT}
-            </div>
-            <div className={`${lemonada.className} ${styles.menuItem}`}>
+            </Link>
+            <Link href='./faq' className={`${lemonada.className} ${styles.menuItem}`}>
               {FAQ}
-            </div>
-            <div className={`${lemonada.className} ${styles.menuItem}`}>
+            </Link>
+            <Link href='./contact' className={`${lemonada.className} ${styles.menuItem}`}>
               {CONTACT_US}
-            </div>
+            </Link>
           </div>
-          <span id={styles.cartIcon}><ShoppingCartIcon /></span>
+          <Link href="./cart" id={styles.cartIcon}><ShoppingCartIcon /></Link>
         </div>
         {
           !hideSearchBar && <div id={styles.inputBoxesContainer}>
