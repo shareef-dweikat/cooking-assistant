@@ -17,12 +17,16 @@ const lemonada = Lemonada({
   subsets: ['latin'],
 })
 
-export default function Navbar() {
+interface props {
+  hideSearchBar: boolean
+}
+
+export default function Navbar({ hideSearchBar } : props) {
   return (
     <div>
       <div id={styles.greenStrip}>
         <div id={styles.contactsContainer}>
-          <EmailIcon sx={{ color: 'white', width: 22, marginRight: 0.5 }}  />
+          <EmailIcon sx={{ color: 'white', width: 22, marginRight: 0.5 }} />
           <a href={`mailto:${EMAIL}`} id={styles.email}>{EMAIL}</a>
           <span id={styles.divider}> | </span>
           <PhoneIcon sx={{ color: 'white', width: 16, marginRight: 0.5 }} />
@@ -58,11 +62,16 @@ export default function Navbar() {
           </div>
           <span id={styles.cartIcon}><ShoppingCartIcon /></span>
         </div>
-        <div id={styles.inputBoxesContainer}>
-          <input id={styles.searchDropdown} value="Dropdown" />
-          <input id={styles.searchBox} value="Search" />
-          <div id={styles.searchBtn}><SearchIcon /></div>
-        </div>
+        {
+          !hideSearchBar && <div id={styles.inputBoxesContainer}>
+            <select id={styles.searchDropdown}>
+              <option value="all">All categories</option>
+            </select>
+            <input id={styles.searchBox} value="Search" />
+            <div id={styles.searchBtn}><SearchIcon /></div>
+          </div>
+        }
+
       </div>
     </div>
   )

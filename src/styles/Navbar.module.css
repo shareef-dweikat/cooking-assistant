@@ -95,11 +95,12 @@
   border: 1px solid #EDEDC9;
   font-size: 17px;
   width: 30%;
-  height: 45px;
+  height: 49px;
   padding-inline: 25px;
   color: #808088;
   border-top-left-radius: 1px;
   border-bottom-left-radius: 1px;
+  margin: 0px;
 }
 
 #inputBoxesContainer {
@@ -116,6 +117,15 @@
 #socialIcons {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 750px) {
+  #searchDropdown {
+    display: none;
+  }
+  #searchBox {
+    width: 95%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
