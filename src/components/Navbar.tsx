@@ -1,6 +1,10 @@
 import styles from '../styles/Navbar.module.css'
 import Link from 'next/link';
-import { COOKING_ASSISTANT, MOBILE_NUMBER, EMAIL, HOME, SHOP, ABOUT, FAQ, CONTACT_US } from '../constants/strings'
+import {
+  EMAIL, HOME, SHOP, ABOUT, FAQ, CONTACT_US,
+  MY_MOBILE_NUMBER, MY_EMAIL, MY_CART, SOCIAL_MEDIA_SECTION,
+  INSTGRAM, FACEBOOK, PINTEREST
+} from '../constants/strings'
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -21,21 +25,27 @@ interface props {
   hideSearchBar?: boolean
 }
 
-export default function Navbar({ hideSearchBar } : props) {
+export default function Navbar({ hideSearchBar }: props) {
   return (
     <div>
       <div id={styles.greenStrip}>
         <div id={styles.contactsContainer}>
           <EmailIcon sx={{ color: 'white', width: 22, marginRight: 0.5 }} />
-          <a href={`mailto:${EMAIL}`} id={styles.email}>{EMAIL}</a>
+          <a href={`mailto:${EMAIL}`} id={styles.email}>{MY_EMAIL}</a>
           <span id={styles.divider}> | </span>
           <PhoneIcon sx={{ color: 'white', width: 16, marginRight: 0.5 }} />
-          <a href={`tel:{MOBILE_NUMBER}`} id={styles.mobileNumber}>{MOBILE_NUMBER}</a>
+          <a href={`tel:{MOBILE_NUMBER}`} id={styles.mobileNumber}>{MY_MOBILE_NUMBER}</a>
         </div>
-        <div id={styles.socialIcons}>
-          <FacebookIcon sx={{ width: 18, marginRight: 4, cursor: 'pointer' }} />
-          <InstagramIcon sx={{ width: 18, marginRight: 4, cursor: 'pointer' }} />
-          <PinterestIcon sx={{ width: 18, cursor: 'pointer' }} />
+        <div id={styles.socialIcons} title={SOCIAL_MEDIA_SECTION}>
+          <span title={FACEBOOK}>
+            <FacebookIcon sx={{ width: 18, marginRight: 4, cursor: 'pointer' }} />
+          </span>
+          <span title={INSTGRAM}>
+            <InstagramIcon sx={{ width: 18, marginRight: 4, cursor: 'pointer' }} />
+          </span>
+          <span title={PINTEREST}>
+            <PinterestIcon sx={{ width: 18, cursor: 'pointer' }} />
+          </span>
         </div>
       </div>
       <div id={styles.outerContainer}>
@@ -47,7 +57,7 @@ export default function Navbar({ hideSearchBar } : props) {
             <Link href='./' className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
             </Link>
-            <Link href='./shop'className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href='./shop' className={`${lemonada.className} ${styles.menuItem}`}>
               {SHOP}
             </Link>
             <Link href='./about' className={`${lemonada.className} ${styles.menuItem}`}>
@@ -60,7 +70,9 @@ export default function Navbar({ hideSearchBar } : props) {
               {CONTACT_US}
             </Link>
           </div>
-          <Link href="./cart" id={styles.cartIcon}><ShoppingCartIcon /></Link>
+          <Link href="./cart" id={styles.cartIcon}>
+            <span title={MY_CART} ><ShoppingCartIcon /></span>
+          </Link>
         </div>
         {
           !hideSearchBar && <div id={styles.inputBoxesContainer}>
