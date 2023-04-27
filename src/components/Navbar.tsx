@@ -1,7 +1,7 @@
 import styles from '../styles/Navbar.module.css'
 import Link from 'next/link';
 import {
-  EMAIL, HOME, SHOP, ABOUT, FAQ, CONTACT_US,
+  EMAIL, HOME, ORDERS, ABOUT, FAQ, CONTACT_US,
   MY_MOBILE_NUMBER, MY_EMAIL, MY_CART, SOCIAL_MEDIA_SECTION,
   INSTGRAM, FACEBOOK, PINTEREST
 } from '../constants/strings'
@@ -57,8 +57,8 @@ export default function Navbar({ hideSearchBar }: props) {
             <Link href='./' className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
             </Link>
-            <Link href='./shop' className={`${lemonada.className} ${styles.menuItem}`}>
-              {SHOP}
+            <Link href='./orders' className={`${lemonada.className} ${styles.menuItem}`}>
+              {ORDERS}
             </Link>
             <Link href='./about' className={`${lemonada.className} ${styles.menuItem}`}>
               {ABOUT}

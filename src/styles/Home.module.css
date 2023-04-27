@@ -1,5 +1,5 @@
 #container {
-    /* padding-inline: 32px; */
+    padding-bottom: 32px;
 }
 
 #productsContainer {
@@ -7,4 +7,46 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+#price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-inline: 8px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+#addToCartBtn {
+    background-color: #89c74a;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding-block: 12px;
+    padding-inline: 32px;
+    width: fit-content;
+    margin-inline: 8px;
+
+    cursor: pointer;
+}
+
+#addToCartBtn:hover {
+    background-color: orange;
+    color: white;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@media only screen and (max-width: 400px) {
+    #footer {
+        flex-direction: column;
+    }
+
+    #addToCartBtn {
+        margin: 4px;
+    }
 }
