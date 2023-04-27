@@ -1,0 +1,42 @@
+#container {
+    height: 500;
+    width: 250
+}
+
+#header {
+    background-color: #35cce6;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: 'center';
+    align-items: center;
+    border-width: 1;
+    border-style: solid;
+    border-color: #35cce6
+}
+
+#conversationBox {
+    padding: 4;
+    background-color: white;
+    height: 80%;
+    width: 100%;
+    border-width: 0.5;
+    border-style: solid;
+    border-bottom-style: none;
+    border-color: #f4f7f9
+}
+
+#messagbox {
+    background-color: #f4f7f9;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center
+}
+
+#messagbox input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f7f9;
+}
