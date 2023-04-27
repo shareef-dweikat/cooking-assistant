@@ -1,6 +1,10 @@
 #container {
-    height: 500;
-    width: 250
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 500px;
+    width: 250px;
+    cursor: pointer;
 }
 
 #header {
@@ -8,25 +12,40 @@
     height: 15%;
     width: 100%;
     display: flex;
-    justify-content: 'center';
+    justify-content: center;
     align-items: center;
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
-    border-color: #35cce6
+    border-color: #35cce6;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 #conversationBox {
-    padding: 4;
+    padding: 4px;
     background-color: white;
     height: 80%;
     width: 100%;
-    border-width: 0.5;
+    border-width: 0.5px;
     border-style: solid;
     border-bottom-style: none;
-    border-color: #f4f7f9
+    border-color: #f4f7f9;
+    overflow: auto;
 }
 
-#messagbox {
+#dialogBox {
+    background-color: #f4f7f9;
+    line-break: strict;
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 8px
+}
+
+#messageBox {
     background-color: #f4f7f9;
     height: 5%;
     width: 100%;
@@ -34,9 +53,42 @@
     align-items: center
 }
 
-#messagbox input {
+#messageBox input {
     border: none;
     height: 100%;
     width: 100%;
     background-color: #f4f7f9;
+}
+
+#leftDialogBoxContainer {
+    display: flex;
+    justify-content: flex-end
+}
+
+#inActiveChatcontainer {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 250px;
+    background-color: #35cce6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #35cce6;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+    padding-bottom: 4px;
+}
+
+#inActiveChatTitle {
+    font-size: 18px;
+    text-align: center;
+}
+
+#inActiveChatSubTitle {
+    font-size: 14px;
+    text-align: center;
 }

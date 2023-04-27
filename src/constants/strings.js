@@ -21,3 +21,8 @@ export const FACEBOOK = "Facebook"
 export const INSTGRAM = 'Instgram'
 export const THIS_FIELD_IS_REQUIRED = "This field is required"
 export const CHECKOUT = "Checkout"
+export const CHAT_WELCOME_MESSAGE = "Hi, i am your cooking assistant. Type the name of the dish you want to cook and let me handle finding the ingredients for you."
+export const CHAT_TITLE = "Cooking Assistant"
+export const IN_ACTIVE_CHAT_TITLE = "AI Cooking Assistant"
+export const IN_ACTIVE_CHAT_SUB_TITLE = "Let me help you find the ingredients"
+
