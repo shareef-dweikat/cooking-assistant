@@ -1,0 +1,43 @@
+#formContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 100px;
+    width: 600px;
+}
+
+#formContainer input {
+    margin-block: 8px;
+    padding: 8px;
+    border-radius: 10px;
+    border-width: .1px;
+}
+
+#formContainer input[type="submit"] {
+    background-color: #89c74a;
+    border: 1px solid #89c74a;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#formUpperRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+#messageInput {
+    min-height: 200px;
+    text-align: left;
+    margin-block: 8px;
+    padding: 8px;
+    border-radius: 10px;
+    border-width: .1px;
+}
+
+@media only screen and (max-width: 700px) {
+    #formUpperRow {
+        display: flex;
+        flex-direction: column;
+    }
+}

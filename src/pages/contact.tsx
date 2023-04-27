@@ -1,19 +1,36 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Contact.module.css'
 import Navbar from '../components/Navbar'
-import ProductCard from '@/components/ProductCard'
+import { useForm } from 'react-hook-form'
+import { CONTACT_US, EMAIL, MESSAGE, MOBILE_NUMBER, NAME, SEND, THIS_FIELD_IS_REQUIRED } from '@/constants/strings';
+import ThickStrip from '@/components/ThickStrip';
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Contact() {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
+  console.log(watch("example")); // 
   return (
     <div id={styles.container}>
-      <Navbar hideSearchBar />
-      <div id={styles.productsContainer}>
-        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
-      </div>
+      <Navbar />
+      <ThickStrip pageTitle={CONTACT_US} />
+      <form id={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
+        <div id={styles.formUpperRow}>
+          <input {...register("required", { required: true })} placeholder={NAME} />
+          {errors.required && <div>{THIS_FIELD_IS_REQUIRED}</div>}
+
+          <input {...register("required", { required: true })} placeholder={EMAIL} />
+          {errors.required && <div>{THIS_FIELD_IS_REQUIRED}</div>}
+
+          <input {...register("required", { required: true })} placeholder={MOBILE_NUMBER} />
+          {errors.required && <div>{THIS_FIELD_IS_REQUIRED}</div>}
+        </div>
+
+        <textarea rows={4} cols={50} id={styles.messageInput} {...register("required", { required: true })} placeholder={MESSAGE} />
+        {errors.required && <div>{THIS_FIELD_IS_REQUIRED}</div>}
+
+        <input type="submit" value={SEND} />
+      </form>
     </div>
   )
 }

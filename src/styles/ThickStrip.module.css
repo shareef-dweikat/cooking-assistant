@@ -1,0 +1,19 @@
+#container {
+    background-color: #89c74a;
+    margin-top: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 160px;
+}
+
+#title {
+    color: white;
+    font-size: 32px
+}
+
+#route {
+    color: white;
+    font-size: 14px
+}
