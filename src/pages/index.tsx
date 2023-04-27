@@ -7,6 +7,17 @@ export default function Home() {
   return (
     <div id={styles.container}>
       <Navbar />
+      <div id={styles.productsContainer}>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
       <ChatWidget />
     </div>
   )
