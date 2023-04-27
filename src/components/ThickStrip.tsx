@@ -13,7 +13,7 @@ const lemonadaRegular= Lemonada({
 })
 
 interface props {
-  pageTitle?: string
+  pageTitle: string
 }
 
 export default function ThickStrip({ pageTitle }: props) {
