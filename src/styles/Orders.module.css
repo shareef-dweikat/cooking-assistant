@@ -1,0 +1,13 @@
+#container {
+    padding: 16px;
+}
+
+#ordersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+}
+
+#title {
+    font-size: 22px;
+}
