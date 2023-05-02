@@ -15,7 +15,9 @@ import Logo from '../assets/images/logo_300x300.webp'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Lemonada } from 'next/font/google'
 import SearchIcon from '@mui/icons-material/Search';
-import {ABOUT_ROUTE, CART_ROUTE, CONTACT_ROUTE, FAQ_ROUTE, HOME_ROUTE, ORDERS_ROUTE} from '../constants/routes'
+import { ABOUT_ROUTE, CART_ROUTE, CONTACT_ROUTE, FAQ_ROUTE, HOME_ROUTE, ORDERS_ROUTE } from '../constants/routes'
+import MenuIcon from '@mui/icons-material/Menu';
+import { Checkbox } from '@mui/material';
 
 const lemonada = Lemonada({
   weight: '700',
@@ -31,11 +33,15 @@ export default function Navbar({ hideSearchBar }: props) {
     <div>
       <div id={styles.greenStrip}>
         <div id={styles.contactsContainer}>
-          <EmailIcon sx={{ color: 'white', width: 22, marginRight: 0.5 }} />
-          <a href={`mailto:${EMAIL}`} id={styles.email}>{MY_EMAIL}</a>
+          <span className={styles.iconContainer}>
+            <EmailIcon sx={{ color: 'white', width: 22, marginRight: 0.5 }} />
+            <a href={`mailto:${EMAIL}`} id={styles.email}>{MY_EMAIL}</a>
+          </span>
           <span id={styles.divider}> | </span>
-          <PhoneIcon sx={{ color: 'white', width: 16, marginRight: 0.5 }} />
-          <a href={`tel:{MOBILE_NUMBER}`} id={styles.mobileNumber}>{MY_MOBILE_NUMBER}</a>
+          <span className={styles.iconContainer}>
+            <PhoneIcon sx={{ color: 'white', width: 16, marginRight: 0.5 }} />
+            <a href={`tel:{MOBILE_NUMBER}`} id={styles.mobileNumber}>{MY_MOBILE_NUMBER}</a>
+          </span>
         </div>
         <div id={styles.socialIcons} title={SOCIAL_MEDIA_SECTION}>
           <span title={FACEBOOK}>
@@ -49,12 +55,18 @@ export default function Navbar({ hideSearchBar }: props) {
           </span>
         </div>
       </div>
+
       <div id={styles.outerContainer}>
         <div id={styles.navContainer}>
-          <Link href='./'>
+          <input type="checkbox" id={styles.burgerCheckbox} />
+          <label id={styles.burgerIcon} for={styles.burgerCheckbox}> <MenuIcon /> </label>
+          <Link href={HOME_ROUTE} id={styles.logo}>
             <Image alt='' src={Logo} width={148} height={40} />
           </Link>
+
           <div id={styles.menu}>
+            <input type="checkbox" id={styles.burgerCheckbox} />
+            <label id={styles.inMenuBurgerIcon} for={styles.burgerCheckbox}> <MenuIcon /> </label>
             <Link href={HOME_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
             </Link>
@@ -74,6 +86,8 @@ export default function Navbar({ hideSearchBar }: props) {
           <Link href={CART_ROUTE} id={styles.cartIcon}>
             <span title={MY_CART} ><ShoppingCartIcon /></span>
           </Link>
+
+          {/* <div id={styles.burderMenuContainer}>x</div> */}
         </div>
         {
           !hideSearchBar && <div id={styles.inputBoxesContainer}>

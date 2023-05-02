@@ -3,16 +3,16 @@ import Navbar from '../components/Navbar'
 import ProductCard from '../components/ProductCard'
 import ChatWidget from '../components/ChatWidget'
 import { getProducts } from '../network/controllers/product'
-import {Product} from '../../types'
+import { Product } from '../../types'
 
-export interface props{
+export interface props {
   products: string
 }
 
 export default function Home({ products }: props) {
   const parsedProducts: Product[] = JSON.parse(products)
   return (
-    <div id={styles.container}>
+    <div >
       <Navbar />
       <div id={styles.productsContainer}>
         {

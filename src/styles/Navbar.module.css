@@ -8,6 +8,12 @@
 
 #outerContainer {
   padding-inline: 100px;
+
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
 }
 
 #greenStrip {
@@ -46,6 +52,7 @@
 
 #menu {
   display: flex;
+  margin: auto;
 }
 
 .menuItem {
@@ -63,6 +70,32 @@
   color: #89c74a
 }
 
+#burgerCheckbox {
+  display: none;
+}
+
+#burgerCheckbox:checked~#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#burgerCheckbox:checked~#logo {
+  display: none
+}
+
+#burgerCheckbox:checked~#burgerIcon {
+  display: none
+}
+
+#inMenuBurgerIcon {
+  display: none;
+}
+
+#burgerCheckbox:checked~#menu #inMenuBurgerIcon {
+  display: block
+}
+
 #searchBox {
   width: 64%;
   border: 1px solid #EDEDC9;
@@ -77,6 +110,7 @@
   padding: 3px;
   margin: 0px;
   width: 5%;
+  min-width: 40px;
   background-color: #89c74a;
   display: flex;
   align-items: center;
@@ -108,21 +142,48 @@
 }
 
 
-@media only screen and (max-width: 800px) {
-  #menu {
-    display: none;
-  }
-}
-
 #socialIcons {
   display: flex;
   justify-content: center;
 }
 
+#burgerIcon {
+  /* margin-top: 16px; */
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 825px) {
+  #menu {
+    display: none;
+  }
+
+  #outerContainer {
+    padding-inline: 10px;
+  }
+
+  #cartIcon {
+    display: none;
+  }
+
+  #burgerIcon {
+    display: inline;
+  }
+
+  #navContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+}
+
+
 @media only screen and (max-width: 750px) {
   #searchDropdown {
     display: none;
   }
+
   #searchBox {
     width: 95%;
   }
@@ -132,21 +193,30 @@
   #greenStrip {
     display: block;
   }
+
   #contactsContainer {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
+
   #searchDropdown {
     display: none;
   }
+
   #searchBox {
     width: 95%;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  #navContainer {
+  /* #navContainer {
     display: flex;
     flex-direction: column;
-  }
+  } */
+
+  /* #cartUpperIcon {
+    display: flex;
+    justify-content: center;
+  } */
 }
