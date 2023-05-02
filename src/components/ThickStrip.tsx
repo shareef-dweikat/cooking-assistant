@@ -1,4 +1,4 @@
-import { HOME } from '@/constants/strings'
+import { HOME } from '../constants/strings'
 import styles from '../styles/ThickStrip.module.css'
 import { Lemonada } from 'next/font/google'
 

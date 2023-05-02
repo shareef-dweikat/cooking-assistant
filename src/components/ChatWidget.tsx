@@ -1,22 +1,7 @@
 import styles from '../styles/ChatWidget.module.css'
-import { Lemonada } from 'next/font/google'
 import SendIcon from '@mui/icons-material/Send';
-import { CHAT_TITLE, CHAT_WELCOME_MESSAGE, IN_ACTIVE_CHAT_SUB_TITLE, IN_ACTIVE_CHAT_TITLE } from '@/constants/strings';
+import { CHAT_TITLE, CHAT_WELCOME_MESSAGE, IN_ACTIVE_CHAT_SUB_TITLE, IN_ACTIVE_CHAT_TITLE } from '../constants/strings';
 import { useState } from 'react';
-
-const lemonada = Lemonada({
-  weight: '700',
-  subsets: ['latin'],
-})
-
-const lemonadaRegular = Lemonada({
-  weight: '400',
-  subsets: ['latin'],
-})
-
-interface props {
-  pageTitle?: string
-}
 
 export default function ChatWidget() {
   const [active, setActive] = useState(false)

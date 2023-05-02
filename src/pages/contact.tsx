@@ -1,8 +1,8 @@
 import styles from '@/styles/Contact.module.css'
 import Navbar from '../components/Navbar'
 import { useForm } from 'react-hook-form'
-import { CONTACT_US, EMAIL, MESSAGE, MOBILE_NUMBER, NAME, SEND, THIS_FIELD_IS_REQUIRED } from '@/constants/strings';
-import ThickStrip from '@/components/ThickStrip';
+import { CONTACT_US, EMAIL, MESSAGE, MOBILE_NUMBER, NAME, SEND, THIS_FIELD_IS_REQUIRED } from '../constants/strings';
+import ThickStrip from '../components/ThickStrip';
 
 
 export default function Contact() {

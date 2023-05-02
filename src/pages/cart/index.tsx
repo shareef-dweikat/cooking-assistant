@@ -1,7 +1,7 @@
-import styles from '@/styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 import Navbar from '../../components/Navbar'
 import CartCard from './components/CartCard'
-import { CHECKOUT } from '@/constants/strings'
+import { CHECKOUT } from '../../constants/strings'
 
 export default function Cart() {
   return (
