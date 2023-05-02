@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {
   EMAIL, HOME, ORDERS, ABOUT, FAQ, CONTACT_US,
   MY_MOBILE_NUMBER, MY_EMAIL, MY_CART, SOCIAL_MEDIA_SECTION,
-  INSTGRAM, FACEBOOK, PINTEREST
+  INSTGRAM, FACEBOOK, PINTEREST, ALL_CATEGORIES
 } from '../constants/strings'
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -15,6 +15,7 @@ import Logo from '../assets/images/logo_300x300.webp'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Lemonada } from 'next/font/google'
 import SearchIcon from '@mui/icons-material/Search';
+import {ABOUT_ROUTE, CART_ROUTE, CONTACT_ROUTE, FAQ_ROUTE, HOME_ROUTE, ORDERS_ROUTE} from '../constants/routes'
 
 const lemonada = Lemonada({
   weight: '700',
@@ -54,36 +55,35 @@ export default function Navbar({ hideSearchBar }: props) {
             <Image alt='' src={Logo} width={148} height={40} />
           </Link>
           <div id={styles.menu}>
-            <Link href='./' className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href={HOME_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
             </Link>
-            <Link href='./orders' className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href={ORDERS_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {ORDERS}
             </Link>
-            <Link href='./about' className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href={ABOUT_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {ABOUT}
             </Link>
-            <Link href='./faq' className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href={FAQ_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {FAQ}
             </Link>
-            <Link href='./contact' className={`${lemonada.className} ${styles.menuItem}`}>
+            <Link href={CONTACT_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {CONTACT_US}
             </Link>
           </div>
-          <Link href="./cart" id={styles.cartIcon}>
+          <Link href={CART_ROUTE} id={styles.cartIcon}>
             <span title={MY_CART} ><ShoppingCartIcon /></span>
           </Link>
         </div>
         {
           !hideSearchBar && <div id={styles.inputBoxesContainer}>
             <select id={styles.searchDropdown}>
-              <option value="all">All categories</option>
+              <option value="all">{ALL_CATEGORIES}</option>
             </select>
             <input id={styles.searchBox} value="Search" />
             <div id={styles.searchBtn}><SearchIcon /></div>
           </div>
         }
-
       </div>
     </div>
   )
