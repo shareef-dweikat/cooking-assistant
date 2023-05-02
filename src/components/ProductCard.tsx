@@ -1,16 +1,17 @@
 import styles from '../styles/ProductCard.module.css'
-import { COOKING_ASSISTANT, MOBILE_NUMBER, EMAIL, HOME, SHOP, ABOUT, FAQ, CONTACT_US, SALE, SAVE, ADD_TO_CART } from '../constants/strings'
+import { SALE, SAVE, ADD_TO_CART } from '../constants/strings'
 import { Open_Sans } from 'next/font/google'
 import Logo from '../assets/images/Watermelon3.webp'
 import Image from 'next/image'
 import StarRatings from 'react-star-ratings';
+import {Product} from '../../types'
 
 const openSans = Open_Sans({
   weight: '700',
   subsets: ['latin'],
 })
 
-export default function ProductCard() {
+export default function ProductCard({name}: Product) {
   return (
     <div id={styles.container}>
       <div id={styles.header}>
@@ -22,7 +23,7 @@ export default function ProductCard() {
       </div>
       <div id={styles.body}>
         <Image src={Logo} alt='No Image' width={200} height={150} />
-        <div className={openSans.className} id={styles.title}>Watermelon</div>
+        <div className={openSans.className} id={styles.title}>{name}</div>
         <StarRatings
           rating={2.0}
           starRatedColor="#f9d244"
