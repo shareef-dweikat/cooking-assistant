@@ -96,6 +96,11 @@
   display: block
 }
 
+#burgerCheckbox:checked~#horizantalCartIcon {
+  display: block;
+  background-color: red;
+}
+
 #searchBox {
   width: 64%;
   border: 1px solid #EDEDC9;
@@ -148,9 +153,12 @@
 }
 
 #burgerIcon {
-  /* margin-top: 16px; */
   display: none;
   cursor: pointer;
+}
+
+#horizantalCartIcon {
+  display: none;
 }
 
 @media only screen and (max-width: 825px) {
@@ -164,6 +172,10 @@
 
   #cartIcon {
     display: none;
+  }
+
+  #horizantalCartIcon {
+    display: inline;
   }
 
   #burgerIcon {
@@ -207,16 +219,4 @@
   #searchBox {
     width: 95%;
   }
-}
-
-@media only screen and (max-width: 400px) {
-  /* #navContainer {
-    display: flex;
-    flex-direction: column;
-  } */
-
-  /* #cartUpperIcon {
-    display: flex;
-    justify-content: center;
-  } */
 }

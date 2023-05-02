@@ -63,7 +63,6 @@ export default function Navbar({ hideSearchBar }: props) {
           <Link href={HOME_ROUTE} id={styles.logo}>
             <Image alt='' src={Logo} width={148} height={40} />
           </Link>
-
           <div id={styles.menu}>
             <input type="checkbox" id={styles.burgerCheckbox} />
             <label id={styles.inMenuBurgerIcon} for={styles.burgerCheckbox}> <MenuIcon /> </label>
@@ -82,12 +81,13 @@ export default function Navbar({ hideSearchBar }: props) {
             <Link href={CONTACT_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {CONTACT_US}
             </Link>
+            <Link href={CART_ROUTE} id={styles.horizantalCartIcon}>
+              <span title={MY_CART} ><ShoppingCartIcon /></span>
+            </Link>
           </div>
           <Link href={CART_ROUTE} id={styles.cartIcon}>
             <span title={MY_CART} ><ShoppingCartIcon /></span>
           </Link>
-
-          {/* <div id={styles.burderMenuContainer}>x</div> */}
         </div>
         {
           !hideSearchBar && <div id={styles.inputBoxesContainer}>
