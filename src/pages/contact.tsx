@@ -1,4 +1,4 @@
-import styles from '@/styles/Contact.module.css'
+import styles from '../styles/Contact.module.css'
 import Navbar from '../components/Navbar'
 import { useForm } from 'react-hook-form'
 import { CONTACT_US, EMAIL, MESSAGE, MOBILE_NUMBER, NAME, SEND, THIS_FIELD_IS_REQUIRED } from '../constants/strings';
@@ -7,9 +7,7 @@ import ThickStrip from '../components/ThickStrip';
 
 export default function Contact() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
-
-  console.log(watch("example")); // 
+  const onSubmit = (data: any) => console.log(data);
   return (
     <div id={styles.container}>
       <Navbar />
