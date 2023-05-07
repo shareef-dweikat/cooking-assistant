@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {
   EMAIL, HOME, ORDERS, ABOUT, FAQ, CONTACT_US,
   MY_MOBILE_NUMBER, MY_EMAIL, MY_CART, SOCIAL_MEDIA_SECTION,
-  INSTGRAM, FACEBOOK, PINTEREST, ALL_CATEGORIES
+  INSTGRAM, FACEBOOK, PINTEREST, ALL_CATEGORIES, MOBILE_NUMBER
 } from '../constants/strings'
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -17,7 +17,6 @@ import { Lemonada } from 'next/font/google'
 import SearchIcon from '@mui/icons-material/Search';
 import { ABOUT_ROUTE, CART_ROUTE, CONTACT_ROUTE, FAQ_ROUTE, HOME_ROUTE, ORDERS_ROUTE } from '../constants/routes'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Checkbox } from '@mui/material';
 
 const lemonada = Lemonada({
   weight: '700',
@@ -26,9 +25,10 @@ const lemonada = Lemonada({
 
 interface props {
   hideSearchBar?: boolean
+  onChange?: Function
 }
 
-export default function Navbar({ hideSearchBar }: props) {
+export default function Navbar({ hideSearchBar, onChange = () => { } }: props) {
   return (
     <div>
       <div id={styles.greenStrip}>
@@ -40,7 +40,7 @@ export default function Navbar({ hideSearchBar }: props) {
           <span id={styles.divider}> | </span>
           <span className={styles.iconContainer}>
             <PhoneIcon sx={{ color: 'white', width: 16, marginRight: 0.5 }} />
-            <a href={`tel:{MOBILE_NUMBER}`} id={styles.mobileNumber}>{MY_MOBILE_NUMBER}</a>
+            <a href={`tel:${MY_MOBILE_NUMBER}`} id={styles.mobileNumber}>{MY_MOBILE_NUMBER}</a>
           </span>
         </div>
         <div id={styles.socialIcons} title={SOCIAL_MEDIA_SECTION}>
@@ -94,7 +94,7 @@ export default function Navbar({ hideSearchBar }: props) {
             <select id={styles.searchDropdown}>
               <option value="all">{ALL_CATEGORIES}</option>
             </select>
-            <input id={styles.searchBox} value="Search" />
+            <input id={styles.searchBox} placeholder='Search' onChange={(input) => onChange(input.target.value)} />
             <div id={styles.searchBtn}><SearchIcon /></div>
           </div>
         }

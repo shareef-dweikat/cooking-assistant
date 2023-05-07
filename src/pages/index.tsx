@@ -4,24 +4,40 @@ import ProductCard from '../components/ProductCard'
 import ChatWidget from '../components/ChatWidget'
 import { getProducts } from '../network/controllers/product'
 import { Product } from '../../types'
+import { useState } from 'react'
 
 export interface props {
   products: string
 }
 
 export default function Home({ products }: props) {
+  const [searchValue, setSearchValue] = useState<string>('')
+
   const parsedProducts: Product[] = JSON.parse(products)
+  const productsUserIsLookingFor = searchValue.split(',')
+
+  const filteredProducts: Product[] = parsedProducts.filter((product) => {
+    let flag;
+    try {
+      flag = productsUserIsLookingFor.filter((searchItem)=> {
+        return product.name.toLowerCase().replace(/[^a-z]/g, '').search(searchItem.toLowerCase().replace(/[^a-z]/g, '')) !== -1
+      })
+    } catch (e) {
+      flag = []
+    }
+    return flag.length > 0
+  })
   return (
     <div >
-      <Navbar />
+      <Navbar onChange={setSearchValue} />
       <div id={styles.productsContainer}>
         {
-          parsedProducts.map((product, index) =>
+          filteredProducts.map((product, index) =>
             <ProductCard name={product.name} description={product.description} price={product.price} key={index} />
           )
         }
       </div>
-      <ChatWidget />
+      <ChatWidget onChange={setSearchValue} />
     </div>
   )
 }
