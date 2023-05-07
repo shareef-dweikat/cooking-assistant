@@ -1,6 +1,6 @@
 #container {
     position: fixed;
-    bottom: 20px;
+    bottom: 50px;
     right: 10px;
     height: 500px;
     width: 250px;
@@ -92,3 +92,5 @@
     font-size: 14px;
     text-align: center;
 }
+
+#AIIsWriting { background-color: white; padding: 4px }
