@@ -1,8 +1,8 @@
 import styles from '../styles/ChatWidget.module.css'
 import SendIcon from '@mui/icons-material/Send';
 import MessageIcon from '@mui/icons-material/Message';
-import { CHAT_TITLE, CHAT_WELCOME_MESSAGE, IN_ACTIVE_CHAT_SUB_TITLE, IN_ACTIVE_CHAT_TITLE } from '../constants/strings';
-import { KeyboardEventHandler, useState } from 'react';
+import { CHAT_TITLE, CHAT_WELCOME_MESSAGE } from '../constants/strings';
+import { useState } from 'react';
 import { sendMessage } from '../network/controllers/aiAssistant'
 import { Choice } from '../../types'
 
