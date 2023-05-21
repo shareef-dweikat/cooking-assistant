@@ -1,10 +1,12 @@
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar'
 import ProductCard from '../components/ProductCard'
-import ChatWidget from '../components/ChatWidget'
+// import ChatWidget from '../components/ChatWidget'
 import { getProducts } from '../network/controllers/product'
 import { Product } from '../../types'
 import { useState } from 'react'
+import 'ai-chat-cooking-assistant/dist/bundle.css'
+import {ChatWidget} from 'ai-chat-cooking-assistant'
 
 export interface props {
   products: string
