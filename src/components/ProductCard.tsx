@@ -1,7 +1,7 @@
 import styles from '../styles/ProductCard.module.css'
 import { SALE, SAVE, ADD_TO_CART } from '../constants/strings'
 import { Open_Sans } from 'next/font/google'
-import Logo from '../assets/images/Watermelon3.webp'
+import img from '../assets/images/Watermelon3.webp'
 import Image from 'next/image'
 import StarRatings from 'react-star-ratings';
 import {Product} from '../../types'
@@ -22,7 +22,7 @@ export default function ProductCard({name}: Product) {
         </div>
       </div>
       <div id={styles.body}>
-        <Image src={Logo} alt='No Image' width={200} height={150} />
+        <Image src={img} alt='No Image' width={200} height={150} />
         <div className={openSans.className} id={styles.title}>{name}</div>
         <StarRatings
           rating={2.0}
