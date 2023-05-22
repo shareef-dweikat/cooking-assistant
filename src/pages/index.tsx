@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard'
 import { Product } from '../../types'
 import { useState } from 'react'
 import 'ai-chat-cooking-assistant/dist/bundle.css'
-import {ChatWidget} from 'ai-chat-cooking-assistant'
+// import {ChatWidget} from 'ai-chat-cooking-assistant'
 import products from '../../products.json'
 
 export interface props {
@@ -32,13 +32,13 @@ export default function Home({ products }: props) {
     <div >
       <Navbar onChange={setSearchValue} />
       <div id={styles.productsContainer}>
-        {
+        {/* {
           filteredProducts.map((product, index) =>
             <ProductCard name={product.name} description={product.description} price={product.price} key={index} />
           )
-        }
+        } */}
       </div>
-      <ChatWidget onChange={setSearchValue} />
+      {/* <ChatWidget onChange={setSearchValue} /> */}
     </div>
   )
 }

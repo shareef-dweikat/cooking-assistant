@@ -59,13 +59,13 @@ export default function Navbar({ hideSearchBar, onChange = () => { } }: props) {
       <div id={styles.outerContainer}>
         <div id={styles.navContainer}>
           <input type="checkbox" id={styles.burgerCheckbox} />
-          <label id={styles.burgerIcon} for={styles.burgerCheckbox}> <MenuIcon /> </label>
+          <label id={styles.burgerIcon} htmlFor={styles.burgerCheckbox}> <MenuIcon /> </label>
           <Link href={HOME_ROUTE} id={styles.logo}>
             <Image alt='' src={Logo} width={148} height={40} />
           </Link>
           <div id={styles.menu}>
             <input type="checkbox" id={styles.burgerCheckbox} />
-            <label id={styles.inMenuBurgerIcon} for={styles.burgerCheckbox}> <MenuIcon /> </label>
+            <label id={styles.inMenuBurgerIcon} htmlFor={styles.burgerCheckbox}> <MenuIcon /> </label>
             <Link href={HOME_ROUTE} className={`${lemonada.className} ${styles.menuItem}`}>
               {HOME}
             </Link>
