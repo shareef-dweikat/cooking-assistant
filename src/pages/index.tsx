@@ -1,12 +1,11 @@
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar'
 import ProductCard from '../components/ProductCard'
-// import ChatWidget from '../components/ChatWidget'
-import { getProducts } from '../network/controllers/product'
 import { Product } from '../../types'
 import { useState } from 'react'
 import 'ai-chat-cooking-assistant/dist/bundle.css'
 import {ChatWidget} from 'ai-chat-cooking-assistant'
+import products from '../../products.json'
 
 export interface props {
   products: string
@@ -46,7 +45,7 @@ export default function Home({ products }: props) {
 
 export async function getServerSideProps(context: any) {
 
-  const products = await getProducts()
+  //const products = await getProducts()
   // const { paramId } = context.params
   // // Fetch data from external API
   // const res = await fetch(`${configs.compilerOptions.baseUrl}${COUNTRY_API}${paramId}`)
