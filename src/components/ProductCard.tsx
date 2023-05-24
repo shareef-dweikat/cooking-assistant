@@ -11,7 +11,7 @@ const openSans = Open_Sans({
   subsets: ['latin'],
 })
 
-export default function ProductCard({name}: Product) {
+export default function ProductCard({name}: any) {
   return (
     <div id={styles.container}>
       <div id={styles.header}>
