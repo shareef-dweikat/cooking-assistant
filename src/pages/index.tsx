@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard'
 import { Product } from '../../types'
 import { useState } from 'react'
 import 'ai-chat-cooking-assistant/dist/bundle.css'
-// import {ChatWidget} from 'ai-chat-cooking-assistant'
+import {ChatWidget} from 'ai-chat-cooking-assistant'
 import products from '../../products.json'
 
 export interface props {
@@ -38,7 +38,7 @@ export default function Home({ products }: props) {
           )
         } */}
       </div>
-      {/* <ChatWidget onChange={setSearchValue} /> */}
+      <ChatWidget onChange={setSearchValue} />
     </div>
   )
 }
