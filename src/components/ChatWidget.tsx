@@ -5,12 +5,15 @@ import { CHAT_TITLE, CHAT_WELCOME_MESSAGE } from '../constants/strings';
 import { useState } from 'react';
 import { sendMessage } from '../network/controllers/aiAssistant'
 import { Choice } from '../../types'
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
 
 interface props {
   onChange: Function
+  foundProducts: any
 }
 
-export default function ChatWidget({ onChange }: props) {
+export default function ChatWidget({ onChange, foundProducts }: props) {
   const [active, setActive] = useState(false)
   const [messages, setMessages] = useState<Choice[]>([])
   const [userMessage, setUserMessage] = useState('')
@@ -39,6 +42,22 @@ export default function ChatWidget({ onChange }: props) {
     }
   }
 
+  const getTagType = (item: string)=> {
+    const falg = foundProducts?.filter((product)=> {
+      return product.name === item
+    })
+    return falg.length !== 0 ? 'greenTag' : 'redTag'
+  }
+
+  const getAssistantMessage = (item, index)=> {
+    return <div id='dialogBox' key={index}>
+    {item.message.content?.replace(/['"]+/g, '').split(',').map((item, index) =>
+      <div className={`ingredientTag ${getTagType(item)}`}>
+        {index === 1 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />} {item}
+      </div>)}
+  </div>
+  }
+
   return (
     active ?
       <div id={styles.container}>
@@ -53,12 +72,15 @@ export default function ChatWidget({ onChange }: props) {
             {CHAT_WELCOME_MESSAGE}
           </div>
           {messages?.map((item: Choice, index: number) => {
-            if (item.message.role === "assistant") {
-              return <div id={styles.dialogBox} key={index}>{item.message.content}</div>
+            if (""=== "") {
+              return getAssistantMessage(item, index)
             } else {
               return <div id={styles.leftDialogBoxContainer} key={index}>
                 <div id={styles.dialogBox}>
-                  {item.message.content}
+                  {'gouht, chees, chees, chees, chees, chees, chees'?.split(',').map((item, index) =>
+                    <div style={{ backgroundColor: index === 1 ? '#ffcccb' : '#e8fce8', border: 'solid', borderWidth: 1, margin: 2, padding: 4, borderRadius: 10, display: 'flex' }}>
+                      {index === 1 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small"  />} {item}
+                    </div>)}
                 </div>
               </div>
             }
@@ -76,8 +98,8 @@ export default function ChatWidget({ onChange }: props) {
         </div>
       </div>
       : <div id={styles.inActiveChatcontainer} onClick={() => setActive(true)}>
-        <div id={styles.inActiveChatHint}>Need help finding the ingredients? <div id={styles.hintArrow}/></div>
-        <div  id={styles.inActiveChatcontainerButton} >
+        <div id={styles.inActiveChatHint}>Need help finding the ingredients? <div id={styles.hintArrow} /></div>
+        <div id={styles.inActiveChatcontainerButton} >
           <MessageIcon />
         </div>
       </div>

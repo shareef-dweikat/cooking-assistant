@@ -6,6 +6,7 @@ import { useState } from 'react'
 import 'ai-chat-cooking-assistant/dist/bundle.css'
 import {ChatWidget} from 'ai-chat-cooking-assistant'
 import products from '../../products.json'
+// import ChatWidget from '../components/ChatWidget'
 
 export interface props {
   products: string
@@ -28,6 +29,7 @@ export default function Home({ products }: props) {
     }
     return flag.length > 0
   })
+  
   return (
     <div >
       <Navbar onChange={setSearchValue} />
@@ -38,7 +40,7 @@ export default function Home({ products }: props) {
           )
         }
       </div>
-      <ChatWidget onChange={setSearchValue} />
+      <ChatWidget onChange={setSearchValue} foundProducts={filteredProducts}/>
     </div>
   )
 }

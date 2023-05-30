@@ -47,6 +47,7 @@
     margin-top: 8px;
     color: white;
     background-color: rgb(0, 132, 255);
+    flex-wrap: wrap;
 }
 
 #messageBox {
@@ -77,8 +78,8 @@
 }
 
 #leftDialogBoxContainer #dialogBox {
-    background-color: #E4E6EB;
-    color: black
+    /* background-color: #E4E6EB;*/
+    color: black 
 }
 
 #inActiveChatcontainer {
