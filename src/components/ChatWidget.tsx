@@ -49,9 +49,9 @@ export default function ChatWidget({ onChange, foundProducts }: props) {
     return falg.length !== 0 ? 'greenTag' : 'redTag'
   }
 
-  const getAssistantMessage = (item, index)=> {
+  const getAssistantMessage = (item: any, index: number)=> {
     return <div id='dialogBox' key={index}>
-    {item.message.content?.replace(/['"]+/g, '').split(',').map((item, index) =>
+    {item.message.content?.replace(/['"]+/g, '').split(',').map((item: any, index: number) =>
       <div className={`ingredientTag ${getTagType(item)}`}>
         {index === 1 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />} {item}
       </div>)}
