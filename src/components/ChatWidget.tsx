@@ -43,7 +43,7 @@ export default function ChatWidget({ onChange, foundProducts }: props) {
   }
 
   const getTagType = (item: string)=> {
-    const falg = foundProducts?.filter((product)=> {
+    const falg = foundProducts?.filter((product: any)=> {
       return product.name === item
     })
     return falg.length !== 0 ? 'greenTag' : 'redTag'
@@ -52,7 +52,7 @@ export default function ChatWidget({ onChange, foundProducts }: props) {
   const getAssistantMessage = (item: any, index: number)=> {
     return <div id='dialogBox' key={index}>
     {item.message.content?.replace(/['"]+/g, '').split(',').map((item: any, index: number) =>
-      <div className={`ingredientTag ${getTagType(item)}`}>
+      <div className={`ingredientTag ${getTagType(item)}`} key={index}>
         {index === 1 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />} {item}
       </div>)}
   </div>
@@ -78,7 +78,7 @@ export default function ChatWidget({ onChange, foundProducts }: props) {
               return <div id={styles.leftDialogBoxContainer} key={index}>
                 <div id={styles.dialogBox}>
                   {'gouht, chees, chees, chees, chees, chees, chees'?.split(',').map((item, index) =>
-                    <div style={{ backgroundColor: index === 1 ? '#ffcccb' : '#e8fce8', border: 'solid', borderWidth: 1, margin: 2, padding: 4, borderRadius: 10, display: 'flex' }}>
+                    <div key={index} style={{ backgroundColor: index === 1 ? '#ffcccb' : '#e8fce8', border: 'solid', borderWidth: 1, margin: 2, padding: 4, borderRadius: 10, display: 'flex' }}>
                       {index === 1 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small"  />} {item}
                     </div>)}
                 </div>
